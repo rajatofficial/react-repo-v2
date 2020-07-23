@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the dashboard app Docker image...          
-      - docker build -t reactimage .
+      - docker build -t reactimage --file ./Dockerfile .
       - docker tag reactimage dockerdevsofficial/react-repo:reactimage
       - echo Building the product app Docker image...   
   post_build:
