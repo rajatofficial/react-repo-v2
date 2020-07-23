@@ -21,21 +21,4 @@ phases:
       - printf '[{"name":"imageapi-container","imageUri":"%s"}]' dockerdevsofficial/react-repo:reactimage > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
-# version: 0.2
-# phases:
-#   install:
-#     runtime-versions:
-#       dotnet: 3.1
-#   pre_build:
-#     commands:
-#       - echo Restore started on `date`
-#       - dotnet restore
-#   build:
-#     commands:
-#       - echo Build started on `date`
-#       - dotnet publish -c release -o ./build_output
-# artifacts:
-#   files:
-#     - ./build_output/**/*
-#     - Dashboard/scripts/**/*
-#     - Dashboard/appspec.yml
+
