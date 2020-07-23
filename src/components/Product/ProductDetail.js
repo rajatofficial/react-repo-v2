@@ -11,9 +11,9 @@ const ProductDetail = (props) => {
                         <img className="image" alt='avatar' src={faker.image.transport()} />
                     </span>
                     <div className='content'>
-                        <span className='text'><strong> {props.productName} </strong></span>
+                        <span className='text'><strong> {props.name} </strong></span>
                         <div className='metadata'>
-                            <span className='text'>{props.productDescription}</span>
+                            <span className='text'>{props.description}</span>
                         </div>
                         <div className="extra content">
                             <div>

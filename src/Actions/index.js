@@ -1,6 +1,7 @@
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_ORDERS = "GET_ORDERS";
 export const ADD_ORDER = "ADD_ORDER";
+export const ADD_PRODUCTS = "ADD_PRODUCTS";
 export const UPDATE_USERS = "UPDATE_USERS";
 export const GET_USERS = "GET_USERS";
 export const CHANGE_USER = "CHANGE_USER";
@@ -13,6 +14,16 @@ export function addOrder(order) {
   const action = {
     type: ADD_ORDER,
     order
+  };
+  return action;
+}
+
+export function addProducts(products) {
+  console.log("Add Products Action");
+  console.log(products);
+  const action = {
+    type: ADD_PRODUCTS,
+    products
   };
   return action;
 }

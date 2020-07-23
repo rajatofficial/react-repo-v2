@@ -2,20 +2,20 @@
     "products": [
         {
             "id": "123a",
-            "productName": "Car",
-            "productDescription": "4 wheeler",
+            "name": "Car",
+            "description": "4 wheeler",
             "quantity": 0
         },
         {
             "id": "123b",
-            "productName": "Truck",
-            "productDescription": "6 wheeler",
+            "name": "Truck",
+            "description": "6 wheeler",
             "quantity": 0
         },
         {
             "id": "123c",
-            "productName": "Bike",
-            "productDescription": "2 wheeler",
+            "name": "Bike",
+            "description": "2 wheeler",
             "quantity": 0
         }
     ],

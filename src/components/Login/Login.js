@@ -12,8 +12,7 @@ class Login extends React.Component {
             Username: "",
             Password: "",
             loggedIn: false,
-            users: [{ username: "rajat", password: "rajat123" }, { username: "rahul", password: "rahul123" },
-            { username: "rohit", password: "rohit123" }, { username: "sahil", password: "sahil123" }]
+            users: [{ id:1, username: "Leanne", password: "leanne123" }, { id:2, username: "Ervin", password: "ervin123" }]
         }
     }
 
@@ -31,8 +30,9 @@ class Login extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if (this.state.users.some((e) => { return e.username === this.state.Username && e.password === this.state.Password })) {
-            localStorage.setItem("user", this.state.Username)
+        const usr = this.state.users.filter((e) => { return e.username === this.state.Username && e.password === this.state.Password });
+        if (usr.length > 0) {
+            localStorage.setItem("id", usr[0].id);
             this.setState({ loggedIn: true });
         } else {
             alert("Invalid Credentials!");
@@ -46,7 +46,7 @@ class Login extends React.Component {
                 <div>
                     <UserProvider value={this.state.Username}>
                         {this.context}
-                        <Home />
+                        <Home/>
                     </UserProvider>
                 </div>
             )

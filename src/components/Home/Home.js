@@ -3,11 +3,20 @@ import Product from '../Product/Product';
 import "./Home.css";
 import { UserConsumer } from '../../containers/UserContext';
 import { connect } from 'react-redux'
-import { addOrder } from '../../Actions';
+import axios from 'axios';
+import { addOrder, addProducts } from '../../Actions';
 import { bindActionCreators } from 'redux';
 
 class Home extends Component {
 
+  componentDidMount() {
+    axios.get("http://coxproductapp-env.eba-wcmi8tjk.ap-south-1.elasticbeanstalk.com/api/v1/Product").then(
+      response => {
+        this.props.addProducts(response.data.data);
+      }
+    ).catch(error => {
+    });
+  }
 
   orderClick = (product) => {
     this.props.addOrder(product);
@@ -19,14 +28,24 @@ class Home extends Component {
     window.location.href = "/login";
   }
 
+  dashboardClickHandler = () =>{
+      window.location.href = "/dashboard";
+  }
+
   render() {
     return (
       <div>
-          <div className="logout extra content">
-            <div>
-              <div className="ui basic red button" onClick={this.logoutHandler}> Log Out </div>
-            </div>
+      
+        <div className="logout extra content">
+          <div>
+            <div className="ui basic red button" onClick={this.logoutHandler}> Log Out </div>
           </div>
+        </div>
+        <div className="logout extra content">
+          <div>
+            <div className="ui basic red button" onClick={this.dashboardClickHandler}> Dashboard </div>
+          </div>
+        </div>
         <div className="text">
           <strong>
             <UserConsumer>
@@ -47,7 +66,7 @@ class Home extends Component {
           }
           {this.props.orders.map(order => (
             <div key={order.order.id}>
-              <li>{order.order.productName}</li>
+              <li>{order.order.name}</li>
             </div>
           ))}
         </div>
@@ -58,7 +77,6 @@ class Home extends Component {
 
 // Map Redux state to React component props
 const mapStateToProps = (state) => {
-  console.log(state.homeReducer);
   return {
     products: state.homeReducer.products,
     orders: state.homeReducer.orders
@@ -66,7 +84,7 @@ const mapStateToProps = (state) => {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addOrder }, dispatch);
+  return bindActionCreators({addOrder, addProducts}, dispatch);
 }
 
 // Connect Redux to React
