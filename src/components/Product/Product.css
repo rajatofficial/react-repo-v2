@@ -1,0 +1,10 @@
+.image {
+    height: 29px;
+    width: 29px;
+}
+
+.product {
+    margin-left: 20px;
+    float: left;
+    margin-bottom: 20px
+}

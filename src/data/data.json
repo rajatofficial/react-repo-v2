@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "id": "123a",
+            "productName": "Car",
+            "productDescription": "4 wheeler",
+            "quantity": 0
+        },
+        {
+            "id": "123b",
+            "productName": "Truck",
+            "productDescription": "6 wheeler",
+            "quantity": 0
+        },
+        {
+            "id": "123c",
+            "productName": "Bike",
+            "productDescription": "2 wheeler",
+            "quantity": 0
+        }
+    ],
+    "orders": [],
+    "Username": "",
+    "Password": "",
+    "loggedIn": false,
+    "users": [
+        {
+            "username": "rajat",
+            "password": "rajat123"
+        },
+        {
+            "username": "rahul",
+            "password": "rahul123"
+        },
+        {
+            "username": "rohit",
+            "password": "rohit123"
+        },
+        {
+            "username": "sahil",
+            "password": "sahil123"
+        }
+    ]
+}

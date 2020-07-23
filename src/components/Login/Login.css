@@ -1,0 +1,14 @@
+.styleDiv {
+    margin-top: 7%;
+    margin-left: 38%;
+    width: 25%;
+    border: 2px solid green; 
+    border-radius: 5px;
+}
+
+.innerDivs {
+    margin-top: 25px; 
+    margin-right: 25px; 
+    margin-left: 10px;
+    margin-bottom: 20px;
+}

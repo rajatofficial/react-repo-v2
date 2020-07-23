@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Docker Hub...
+      - docker login -u dockerdevsofficial -p Qwerty@123
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the dashboard app Docker image...          
+      - docker build -t reactimage .
+      - docker tag reactimage dockerdevsofficial/react-repo:reactimage
+      - echo Building the product app Docker image...   
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push dockerdevsofficial/react-repo:reactimage
+      - echo Writing image definitions file...
+      - printf '[{"name":"imageapi-container","imageUri":"%s"}]' dockerdevsofficial/react-repo:reactimage > imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json

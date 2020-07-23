@@ -1,0 +1,17 @@
+
+.product { 
+    margin-left: 60px;
+    margin-top: 20px 
+}
+
+.orders {
+    margin-right: 230px;
+    float: right
+}
+
+.logout {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
