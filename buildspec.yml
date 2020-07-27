@@ -8,10 +8,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the dashboard app Docker image...          
+      - echo Building the React app Docker image...          
       - docker build -t reactimage --file ./Dockerfile .
       - docker tag reactimage dockerdevsofficial/react-repo:reactimage
-      - echo Building the product app Docker image...   
+      - echo Building the React app Docker image...   
   post_build:
     commands:
       - echo Build completed on `date`
@@ -20,5 +20,6 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"imageapi-container","imageUri":"%s"}]' dockerdevsofficial/react-repo:reactimage > imagedefinitions.json
 artifacts:
-    files: imagedefinitions.json
-
+    files:
+      - imagedefinitions.json
+      - Dockerrun.aws.json
